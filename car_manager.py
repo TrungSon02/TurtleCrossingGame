@@ -68,5 +68,31 @@ class CarManager:
         for car in self.car_list:
             # if car.distance(player) < 25:
             # if (abs(car.ycor() - player.ycor()) < 25 and car.distance(player) < 25):
-            if abs(car.xcor() - player.xcor()) < 40 and car.distance(player) < 27:
+            # if (abs(car.xcor() - player.xcor()) < 25 or abs(car.ycor() - player.ycor()) < 25) and car.distance(player) < 27:
+            #     print(abs(car.xcor() - player.xcor()))
+            #     print(abs(car.ycor() - player.ycor()))
+            #     print(car.distance(player))
+            #     return True
+            if car.distance(player) < 20:
+                print("Case 1")
+                print(car.distance(player))
+                return True
+
+            if car.distance(player) < 26 and 0 < car.ycor() - player.ycor() < 26:
+                print("Case 2")
+                print(car.distance(player))
+                print(car.ycor() - player.ycor())
+                return True
+
+            if car.distance(player) < 27 and 0 < player.ycor() - car.ycor() < 18:
+                print("Case 3")
+                print(car.distance(player))
+                print(player.ycor() - car.ycor())
+                return True
+
+            if abs(car.xcor() - player.xcor()) < 40 and car.distance(player) < 35 and abs(car.ycor() - player.ycor()) < 9:
+                print("Case 4")
+                print(abs(car.xcor() - player.xcor()))
+                print(car.distance(player))
+                print(abs(car.ycor() - player.ycor()))
                 return True
